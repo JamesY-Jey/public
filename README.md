@@ -1,0 +1,2 @@
+# public
+some public assets

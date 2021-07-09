@@ -25,3 +25,29 @@ btf.isJqueryLoad(function () {
         });
     })();
 })
+
+btf.isJqueryLoad(function () {
+    (function (params) {
+        // footer背景样式
+        $('#footer').css('background-position','center');
+    })();
+})
+
+// 收藏
+function AddFavorite(url, title) {
+	url = window.location.href || 'https://www.jamesy.cn';
+	title = document.title || '哈哈哈哈密瓜的博客';
+	try {
+		if (window.sidebar && window.sidebar.addPanel) {
+			window.sidebar.addPanel(title, url, '');
+			alert('感谢宁~！');
+		} else if (window.external) {
+			window.external.AddFavorite(url, title);
+			alert('感谢宁~！');
+		} else if (window.opera && window.print) {
+			return true;
+		}
+	} catch (e) {
+		alert('收藏失败，\n请使用Ctrl+D进行添加！');
+	}
+}
